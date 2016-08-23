@@ -11,5 +11,5 @@ RUN cd /tmp/build && \
 
 ADD kafka-autoextend-partitions.sh /usr/bin/kafka-autoextend-partitions.sh
 ADD kafka-kubernetes-start.sh /usr/bin/kafka-kubernetes-start.sh
-RUN sed -i "listeners=PLAINTEXT://KAFKA_ADVERTISED_HOST_NAME:9092"  $KAFKA_HOME/config/server.properties
+RUN sed -i "listeners=PLAINTEXT://$KAFKA_ADVERTISED_HOST_NAME:9092"  $KAFKA_HOME/config/server.properties
 CMD ["kafka-kubernetes-start.sh"]
