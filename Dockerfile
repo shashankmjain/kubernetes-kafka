@@ -11,5 +11,5 @@ RUN cd /tmp/build && \
 
 ADD kafka-autoextend-partitions.sh /usr/bin/kafka-autoextend-partitions.sh
 ADD kafka-kubernetes-start.sh /usr/bin/kafka-kubernetes-start.sh
-
+COPY config.properties /usr/bin/config.properties
 CMD ["kafka-kubernetes-start.sh"]
