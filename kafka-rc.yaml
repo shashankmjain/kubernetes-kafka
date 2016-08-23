@@ -4,7 +4,7 @@ metadata:
   labels:
     app: kafka-client
     component: kafka-broker
-  name: kafka-broker
+  name: kafka-client
 spec:
   replicas: 1
   template:
