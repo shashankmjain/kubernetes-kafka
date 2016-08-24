@@ -7,9 +7,9 @@ metadata:
     component: kafka-broker
 spec:
   ports:
-  - port: 9095
+  - port: 9092
     name: kafka-port
-    targetPort: 9095
+    targetPort: 9092
     protocol: TCP
   selector:
     app: kafka
