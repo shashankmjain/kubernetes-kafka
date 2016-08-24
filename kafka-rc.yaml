@@ -2,15 +2,15 @@ apiVersion: v1
 kind: ReplicationController
 metadata:
   labels:
-    app: kafka-client
+    app: kafka
     component: kafka-broker
-  name: kafka-client
+  name: kafka
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: kafka-client
+        app: kafka
         component: kafka-broker
     spec:
       containers:
