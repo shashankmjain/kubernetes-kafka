@@ -1,6 +1,6 @@
 FROM wurstmeister/kafka:0.10.0.0
 
-MAINTAINER CloudTrackInc
+MAINTAINER CloudTrackInc1
 
 RUN java -version
 
@@ -10,6 +10,5 @@ RUN cd /tmp/build && \
     cp build/libs/kubernetes-expander-1.0-SNAPSHOT.jar $KAFKA_HOME/libs/
 
 ADD kafka-autoextend-partitions.sh /usr/bin/kafka-autoextend-partitions.sh
-ADD kafka-kubernetes-start.sh /usr/bin/kafka-kubernetes-start.sh
 
-CMD ["kafka-kubernetes-start.sh"]
+CMD echo "Hello, World" | $KAFKA_HOME/bin/kafka-console-producer.sh --broker-list kafka:9092 --topic demo-topic
