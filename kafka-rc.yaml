@@ -2,15 +2,15 @@ apiVersion: v1
 kind: ReplicationController
 metadata:
   labels:
-    app: kafka
+    app: kafka-client
     component: kafka-broker
-  name: kafka
+  name: kafka-client
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: kafka
+        app: kafka-client
         component: kafka-broker
     spec:
       containers:
@@ -27,8 +27,6 @@ spec:
             value: "false"
           - name: KAFKA_PORT
             value: "9092"
-          - name: KAFKA_LISTENERS
-            value: "PLAINTEXT://0.0.0.0:9092"
           - name: KAFKA_ADVERTISED_PORT
             value: "9092"
           - name: KAFKA_ADVERTISED_HOST_NAME
@@ -37,5 +35,3 @@ spec:
                 fieldPath: status.podIP
           - name: KAFKA_ZOOKEEPER_CONNECT
             value: kafka-zoo-svc:2181
-          - name: KAFKA_CREATE_TOPICS
-            value: demo-topic:16:1

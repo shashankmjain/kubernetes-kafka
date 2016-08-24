@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: kafka
+  name: kafka-client
   labels:
     app: kafka
     component: kafka-broker
@@ -12,5 +12,5 @@ spec:
     targetPort: 9092
     protocol: TCP
   selector:
-    app: kafka
+    app: kafka-client
     component: kafka-broker
