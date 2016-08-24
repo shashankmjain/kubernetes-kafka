@@ -17,7 +17,7 @@ spec:
       - name: kafka
         image: smjain/kubernetes-kafka:latest
         ports:
-        - containerPort: 9092
+        - containerPort: 9095
         env:
           - name: ENABLE_AUTO_EXTEND
             value: "true"
@@ -26,11 +26,11 @@ spec:
           - name: KAFKA_AUTO_CREATE_TOPICS_ENABLE
             value: "false"
           - name: KAFKA_PORT
-            value: "9092"
+            value: "9095"
           - name: KAFKA_LISTENERS
-            value: "PLAINTEXT://kafka:9092"
+            value: "PLAINTEXT://kafka:9095"
           - name: KAFKA_ADVERTISED_PORT
-            value: "9092"
+            value: "9095"
           - name: KAFKA_ADVERTISED_HOST_NAME
             valueFrom:
               fieldRef:
