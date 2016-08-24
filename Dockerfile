@@ -11,6 +11,6 @@ RUN cd /tmp/build && \
 
 #ADD kafka-autoextend-partitions.sh /usr/bin/kafka-autoextend-partitions.sh
 
-CMD "Hello, World" | $KAFKA_HOME/bin/kafka-console-producer.sh --broker-list 192.168.27.185:9092 --topic demo-topic
+CMD "Hello, World" | $KAFKA_HOME/bin/kafka-console-producer.sh --broker-list 192.168.27.185:9092 --topic demo-topic_i
 
 ENTRYPOINT echo
